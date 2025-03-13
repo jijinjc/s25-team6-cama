@@ -2,11 +2,11 @@
 
 The following is a description of the various infrastructural components of the project. **The names and schemas used here are important, as each team will be working on different components of the project. The names and schemas are designed to be consistent across teams, so that the various components can be integrated together.** If you have any questions about the names or schemas, please ask!
 
-The overview slides for the project are available [here](https://docs.google.com/presentation/d/1QZ6gXKYuN3Uk1owGHLrKVhh0EbPUGKQf9-VEnpnaCE4/edit?usp=sharing).
+The overview slides for the project are available [here](https://docs.google.com/presentation/d/1XRS2O_0IJNv2jknYMHfWHBhhqFn0e2gyK_vgbQMAUKg/edit?usp=sharing).
 
 ## Cloud Storage Buckets
 
-Since bucket names must be globally unique, each name contains `team<N>` which should be replace with the actual team number (i.e., `team1` for orange, and `team2` for purple). The buckets are organized as follows:
+Since bucket names must be globally unique, each name contains `team<N>` which should be replaced with your actual team number (i.e., `team1`, `team2`, etc.). The buckets are organized as follows:
 
 | Bucket name | Description of contents |
 |-------------|-------------------------|
@@ -27,7 +27,7 @@ In the `musa5090s25-team<N>-raw_data` bucket, there are three folders. Each fold
 
 ### Prepared Data
 
-In the `musa5090s25-team<N>-prepared_data` bucket, there are three folders. Each should contain a single file named `data.jsonl`. The folders are as follows:
+In the `musa5090s25-team<N>-prepared_data` bucket, there are three folders. Each should contain a single file named `data.jsonl` or `data.parquet`. The folders are as follows:
 
 | Folder | Contents |
 |--------|----------|
@@ -58,7 +58,7 @@ The `musa5090s25-team<N>-public` bucket contains files that are formatted to be 
 
 #### Source Tables
 
-The tables in `source` are external tables. The data is stored in JSON-L files in the `musa5090s25-team<N>-prepared_data` Cloud Storage bucket.
+The tables in `source` are external tables. These are your warehouse's raw materials. The data is stored in JSON-L or Parquet files in the `musa5090s25-team<N>-prepared_data` Cloud Storage bucket.
 
 - `source.opa_properties`
 - `source.opa_assessments`
@@ -66,9 +66,9 @@ The tables in `source` are external tables. The data is stored in JSON-L files i
 
 #### Core Tables
 
-There's a correlated table in `core` for each table in `source`. Even though external tables are convenient for getting data into BigQuery, they're not the most efficient to query from. So, we copy the data into a table in `core` and query from there.
+There's a correlated table in `core` for each table in `source`. Even though external tables are convenient for getting data into BigQuery, they're not the most efficient to query from. So, we copy the data into a table in `core` and query from there. There may be some cleaning and normalization useful that you do to the source data as you copy it over, such as ensuring that numbers and dates are stored in the correct format.
 
-In addition to the fields from the raw tables, each of the core tables will have a `property_id` field (derived from the OPA or BRT number) that can be used as the unique identifier for a property across the tables.
+In addition to the fields from the raw tables, each of the core tables will have a cleaned and standardized `property_id` string field (derived from the OPA or BRT number) that can be used as the unique identifier for a property across the tables.
 
 - `core.opa_properties`
 - `core.opa_assessments`
@@ -76,7 +76,7 @@ In addition to the fields from the raw tables, each of the core tables will have
 
 #### Derived Tables
 
-The `derived` schema contains all-new tables with data based on analyses and predictions. Below, each table is listed with the _minimal_ fields to include. The tables may have more fields than these (e.g., for `current_assessments` we may choose to store confidence interval data), but they will definitely have _at least_ the listed fields.
+The `derived` schema contains all-new tables with data based on analyses and predictions on data from the `core` tables. Below, each table is listed with the _minimal_ fields to include. The tables may have more fields than these (e.g., for `current_assessments` we may choose to store confidence interval data), but they will definitely have _at least_ the listed fields.
 
 - `derived.tax_year_assessment_bins` -- The bins used to create the assessment distribution chart for a given tax year.
   
