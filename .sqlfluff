@@ -1,3 +1,9 @@
+# SQLFluff configuration file
+#
+# Customize this file in consultation with the rest of your team to ensure
+# that you have a consistent SQL style. See the SQLFluff documentation for
+# more information: https://docs.sqlfluff.com/en/stable/configuration/
+
 [sqlfluff]
 dialect = bigquery
 rules = core

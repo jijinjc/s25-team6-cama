@@ -1,2 +1,8 @@
+# flake8 configuration
+#
+# Customize this file in consultation with the rest of your team to ensure that
+# everyone is using the same coding style for Python code. For more information
+# about configuring flake8, see: https://flake8.pycqa.org/en/latest/user/configuration.html
+
 [flake8]
 extend-ignore = E501

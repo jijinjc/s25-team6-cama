@@ -1,0 +1,15 @@
+[project]
+name = "cama"
+version = "1.0.0"
+requires-python = ">=3.9"
+dependencies = [
+]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+sqlfluff = "^3.3.1"
+flake8 = "^7.1.2"
+
