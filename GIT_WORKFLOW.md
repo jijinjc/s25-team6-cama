@@ -22,7 +22,9 @@
 
     > The `-m` flag lets you write a commit message in the command line. If you don't use the flag, Git will open your default text editor for you to write a commit message.
     
-    Be sure to write good commit messages that explain what you did, and be careful keep the following kinds of things out of your commits:
+    Be sure to write good commit messages that explain what you did. A good commit message should at the very least describe the changes you made and why. For _great_ commit messages, check out **_The seven rules of a great Git commit message_** at https://cbea.ms/git-commit/
+    
+    Be careful keep the following kinds of files and folders out of your commits:
     - `node_modules` or other build artifacts, as these create a lot of unnecessary clutter in your repository and can make it harder to review what's actually changed on a branch
     - environment variable files, like `.env`, which can contain sensitive information such as API keys
 
