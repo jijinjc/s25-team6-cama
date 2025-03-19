@@ -25,6 +25,8 @@ In the `musa5090s25-team<N>-raw_data` bucket, there are three folders. Each fold
 | `/opa_assessments/` | Contains the "property assessment history" data downloaded from the [Philadelphia Properties and Assessment History](https://opendataphilly.org/dataset/opa-property-assessments) dataset on OpenDataPhilly. |
 | `/pwd_parcels/` | Contains the "PWD parcels" data downloaded from the [PWD Stormwater Billing Parcels](https://opendataphilly.org/dataset/pwd-stormwater-billing-parcels) dataset on OpenDataPhilly. |
 
+There are other datasets available on OpenDataPhilly that may be useful for the project (e.g. [Real Estate Transfers](https://opendataphilly.org/datasets/real-estate-transfers/) contains a history of property sales back to 1999, or [Building and Zoning Permits](https://opendataphilly.org/datasets/licenses-and-inspections-building-and-zoning-permits/) can tell you when properties have had renovations, or [Street Centerlines](https://opendataphilly.org/datasets/street-centerlines/) could help identify major arterials, ...), but I encourage you to start simple with the datasets in the table above.
+
 ### Prepared Data
 
 In the `musa5090s25-team<N>-prepared_data` bucket, there are three folders. Each should contain a single file named `data.jsonl` or `data.parquet`. The folders are as follows:
