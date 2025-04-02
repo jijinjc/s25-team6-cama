@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
 load_dotenv()
 
+import os
 import pathlib
 import requests
 from google.cloud import storage
@@ -20,12 +21,12 @@ with open(filename, 'wb') as f:
 
 print(f'Downloaded{filename}')
 
-bucket_name = 'musa5090s25-team6-raw_data'
-folder_name = 'pwd_parcels/pwd_parcels_raw.geojson'
+bucket_name = os.getenv('DATA_LAKE_BUCKET')
+raw_blobname = 'pwd_parcels/pwd_parcels_raw.geojson'
 
 storage_client = storage.Client()
 bucket = storage_client.bucket(bucket_name)
-blob = bucket.blob(folder_name)
+blob = bucket.blob(raw_blobname)
 blob.upload_from_filename(filename)
 
-print(f'Uploaded {folder_name} to {bucket_name}')
+print(f'Uploaded {raw_blobname} to {bucket_name}')
