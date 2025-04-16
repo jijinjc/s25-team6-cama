@@ -7,9 +7,14 @@
 *.pyc
 env/
 node_modules/
+package-lock.json
 
 # Data
 data/
 
 # Sensitive files
 keys/
+
+raw_data/*
+prepared_data/*
+

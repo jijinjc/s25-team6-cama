@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "@esri/proj-codes": "^3.4.0",
+    "@google-cloud/bigquery": "^7.9.3",
+    "@google-cloud/storage": "^7.16.0",
+    "@mapbox/node-pre-gyp": "^2.0.0",
+    "adm-zip": "^0.5.16",
+    "betterknown": "^1.0.4",
+    "big-json": "^3.2.0",
+    "csv": "^6.3.11",
+    "dotenv": "^16.4.7",
+    "gdal-async": "^3.10.2",
+    "node-fetch": "^3.3.2",
+    "proj4": "^2.10.0"
+  }
+}
