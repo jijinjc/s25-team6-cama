@@ -1,0 +1,3 @@
+gcloud functions deploy generate-assessment-chart-configs --runtime nodejs20 --entry-point generate-assessment-chart-configs --trigger-http --allow-unauthenticated --region us-central1 --set-env-vars PUBLIC_BUCKET_NAME=musa5090s25-team6-public
+
+gcloud functions deploy generate-assessment-chart-configs --runtime=nodejs20 --entry-point=generate-assessment-chart-configs --trigger-http --allow-unauthenticated --region=us-central1 --source="D:\Upenn\25spring\MUSA-5090 Geospatial Cloud Computing_Visualization\GITHUB\s25-team6-cama\tasks\task4" --set-env-vars PUBLIC_BUCKET_NAME=musa5090s25-team6-public

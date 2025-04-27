@@ -7,12 +7,10 @@
 *.pyc
 env/
 node_modules/
+package-lock.json
 
 # Data
 data/
 
 # Sensitive files
-keys/
-musa5090s25-team6-55dedcdb00d4.json
-tasks/task_3/raw_data/pwd_parcels.geojson
-tasks/task_3/prepared_data/pwd_parcels.jsonl
+
