@@ -1,5 +1,9 @@
 _run_current_year_tax_sql_:
 
+```cd
+cd C:\Users\super\Downloads\School Work\MUSA 5090\s25-team6-cama\tasks\task_8
+```
+
 ```shell
 gcloud functions deploy run_current_year_tax_sql ^
 --gen2 ^
